@@ -109,8 +109,8 @@ class Controller {
                     navigator.bluetooth.requestDevice({
                         filters: [{
                             name: 'Trianswer02'
-                        }]
-
+                        }],
+                        optionalServices: ['713d0002-503e-4c75-ba94-3148f18d941e']
                         //'713d0002-503e-4c75-ba94-3148f18d941e'
                         //acceptAllDevices: true//
                     })
