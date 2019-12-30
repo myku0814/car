@@ -95,14 +95,14 @@ class Controller {
             switch(button_word){
                 case 'start':
                     controller.startCarTimer();
-                    this.parentNode.querySelector('.button[data-buttonword="start"]').innerHTML = 'stop';
-                    this.parentNode.querySelector('.button[data-buttonword="start"]').setAttribute('data-buttonword', 'stop');
+                    this.parentNode.querySelector('.button[data-buttonword="start"]').innerHTML = 'quit';
+                    this.parentNode.querySelector('.button[data-buttonword="start"]').setAttribute('data-buttonword', 'quit');
                     break;
 
-                case 'stop':
+                case 'quit':
                     controller.stopCarTimer();
-                    this.parentNode.querySelector('.button[data-buttonword="stop"]').innerHTML = 'start';
-                    this.parentNode.querySelector('.button[data-buttonword="stop"]').setAttribute('data-buttonword', 'start');
+                    this.parentNode.querySelector('.button[data-buttonword="x"]').innerHTML = 'start';
+                    this.parentNode.querySelector('.button[data-buttonword="x"]').setAttribute('data-buttonword', 'start');
                     break;
                 case 'device':
 
@@ -122,8 +122,8 @@ class Controller {
 
                 case 'connect':
 
-                    this.parentNode.querySelector('.button[data-buttonword="connect"]').innerHTML = 'x';
-                    this.parentNode.querySelector('.button[data-buttonword="connect"]').setAttribute('data-buttonword', 'x');
+                    this.parentNode.querySelector('.button[data-buttonword="connect"]').innerHTML = 'disconnect';
+                    this.parentNode.querySelector('.button[data-buttonword="connect"]').setAttribute('data-buttonword', 'disconnect');
                     controller.currentDevice.gatt.connect()  
                     .then(server => {
                         return server.getPrimaryService('713d0002-503e-4c75-ba94-3148f18d941e');
@@ -149,10 +149,10 @@ class Controller {
                     .catch(error => {console.log(error)});
                     break;
 
-                case 'x':
+                case 'disconnect':
 
-                    this.parentNode.querySelector('.button[data-buttonword="x"]').innerHTML = 'connect';
-                    this.parentNode.querySelector('.button[data-buttonword="x"]').setAttribute('data-buttonword', 'connect');
+                    this.parentNode.querySelector('.button[data-buttonword="disconnect"]').innerHTML = 'connect';
+                    this.parentNode.querySelector('.button[data-buttonword="disconnect"]').setAttribute('data-buttonword', 'connect');
                     controller.currentDevice.gatt.disconnect();                    
                     break;
                 
