@@ -101,8 +101,8 @@ class Controller {
 
                 case 'quit':
                     controller.stopCarTimer();
-                    this.parentNode.querySelector('.button[data-buttonword="x"]').innerHTML = 'start';
-                    this.parentNode.querySelector('.button[data-buttonword="x"]').setAttribute('data-buttonword', 'start');
+                    this.parentNode.querySelector('.button[data-buttonword="quit"]').innerHTML = 'start';
+                    this.parentNode.querySelector('.button[data-buttonword="quit"]').setAttribute('data-buttonword', 'start');
                     break;
                 case 'device':
 
@@ -122,8 +122,8 @@ class Controller {
 
                 case 'connect':
 
-                    this.parentNode.querySelector('.button[data-buttonword="connect"]').innerHTML = 'disconnect';
-                    this.parentNode.querySelector('.button[data-buttonword="connect"]').setAttribute('data-buttonword', 'disconnect');
+                    this.parentNode.querySelector('.button[data-buttonword="connect"]').innerHTML = 'x';
+                    this.parentNode.querySelector('.button[data-buttonword="connect"]').setAttribute('data-buttonword', 'x');
                     controller.currentDevice.gatt.connect()  
                     .then(server => {
                         return server.getPrimaryService('713d0002-503e-4c75-ba94-3148f18d941e');
@@ -149,10 +149,10 @@ class Controller {
                     .catch(error => {console.log(error)});
                     break;
 
-                case 'disconnect':
+                case 'x':
 
-                    this.parentNode.querySelector('.button[data-buttonword="disconnect"]').innerHTML = 'connect';
-                    this.parentNode.querySelector('.button[data-buttonword="disconnect"]').setAttribute('data-buttonword', 'connect');
+                    this.parentNode.querySelector('.button[data-buttonword="x"]').innerHTML = 'connect';
+                    this.parentNode.querySelector('.button[data-buttonword="x"]').setAttribute('data-buttonword', 'connect');
                     controller.currentDevice.gatt.disconnect();                    
                     break;
                 
