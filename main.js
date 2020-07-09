@@ -842,7 +842,7 @@ class Controller {
   window.BluetoothDevice = BluetoothDevice;
   window.BluetoothUUID = BluetoothUUID;
   window.recieveMessage = recieveMessage;
-  navigator.bluetooth = bluetooth;
+  //navigator.bluetooth = bluetooth;
   window.BluetoothUUID = BluetoothUUID;
 
 })();
