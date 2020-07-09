@@ -166,11 +166,11 @@ class Controller {
 (function () {
   "use strict";
 
-  if (navigator.bluetooth) {
+  //if (navigator.bluetooth) {
     //already exists, don't polyfill
-    console.log('navigator.bluetooth already exists, skipping polyfill')
-    return;
-  }
+    //console.log('navigator.bluetooth already exists, skipping polyfill')
+    //return;
+  //}
 
   // https://webbluetoothcg.github.io/web-bluetooth/ interface
   function BluetoothDevice(deviceJSON) {
