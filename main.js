@@ -174,7 +174,7 @@ class Controller {
             navigator.bluetooth.requestDevice({
                 filters: [{
 
-                    name: 'TriBLE'
+                    name: 0xa000
                 }],
                 // optionalServices: ['713d0002-503e-4c75-ba94-3148f18d941e']
                 //'713d0002-503e-4c75-ba94-3148f18d941e'
