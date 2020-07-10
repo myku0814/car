@@ -78,7 +78,7 @@ class Controller {
         const button_scope = simpleCreateHTML('div', 'buttons');
         main_node.appendChild(button_scope);
 
-        const button_chars = ['start', 'connect', 'settings','device'];
+        const button_chars = ['start', 'connect', 'settings', 'device', 'test'];
         for(let i=0; i<button_chars.length; i++){
         let button = simpleCreateHTML('span', 'button', button_chars[i], {'data-buttonword': button_chars[i]});
         button.addEventListener("click", button_listener); //加入事件監聽，按按鈕執行button_listener
@@ -152,7 +152,17 @@ class Controller {
                     console.log('年齡已設定為' + user.age + '歲');
                     console.log('標準心率為'+ user.stdheartrate + '(每分鐘)');
                     break;
+                case 'test':
+                    
+                    message = {
+                        ex1: "hi",
+                        ex2: {a: 1, b: 2}
+                    };
 
+                    console.log("<--", message);
+                    window.webkit.messageHandlers.bluetooth.postMessage(message);
+                    break;
+                
                 default: 
 
                     alert('oops...');
