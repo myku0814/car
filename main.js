@@ -154,7 +154,7 @@ class Controller {
                     break;
                 case 'test':
                     
-                    message = {
+                    let message = {
                         ex1: "hi",
                         ex2: {a: 1, b: 2}
                     };
